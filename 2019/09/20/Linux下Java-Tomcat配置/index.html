@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      给亲爱的你 | 千里逐漉
+      Linux下Java+Tomcat配置 | 千里逐漉
     
   </title>
   <meta name="author" content="陈景">
@@ -164,7 +164,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《给亲爱的你》
+			当前文章&nbsp;:&nbsp;《Linux下Java+Tomcat配置》
 		
 	</p>
 
@@ -266,18 +266,6 @@
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
-
-	
-		<div class="layout-toc">
-			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-			</div>
-		</div>
-
-		
-		<script src="/plugin/toc/katelog.min.js"></script>
-
-		
 	 
 
 <div class="layout-post">
@@ -285,8 +273,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/09/17/第一篇博客/" itemprop="url">
-		给亲爱的你
+	<a href="/2019/09/20/Linux下Java-Tomcat配置/" itemprop="url">
+		Linux下Java+Tomcat配置
 	</a>
 
 	</div>
@@ -299,9 +287,9 @@
 
 	发布于
 
-	<a href="/2019/09/17/第一篇博客/" itemprop="url">
-		<time datetime="2019-09-17T09:19:13.000Z" itemprop="datePublished">
-	  		2019-09-17
+	<a href="/2019/09/20/Linux下Java-Tomcat配置/" itemprop="url">
+		<time datetime="2019-09-20T08:34:46.000Z" itemprop="datePublished">
+	  		2019-09-20
 	  </time>
 	</a>
 	&nbsp;
@@ -317,9 +305,9 @@
 
 	更新于
 
-	<a href="/2019/09/17/第一篇博客/" itemprop="url">
-		<time datetime="2019-09-17T09:19:13.000Z" itemprop="dateUpdated">
-	  		2019-09-17
+	<a href="/2019/09/20/Linux下Java-Tomcat配置/" itemprop="url">
+		<time datetime="2019-09-20T08:34:46.000Z" itemprop="dateUpdated">
+	  		2019-09-20
 	  </time>
 	</a> 
 
@@ -330,8 +318,8 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/Love/" class=" ">
-			Love
+		<a href="/tags/Linux-Java-Tomcat/" class=" ">
+			Linux,Java,Tomcat
 		</a>
 	
 		
@@ -340,7 +328,7 @@
 		
 
 	
-    <span class="leancloud_visitors" id="/2019/09/17/第一篇博客/_visitors" data-url="/2019/09/17/第一篇博客/" data-title="给亲爱的你">
+    <span class="leancloud_visitors" id="/2019/09/20/Linux下Java-Tomcat配置/_visitors" data-url="/2019/09/20/Linux下Java-Tomcat配置/" data-title="Linux下Java+Tomcat配置">
        	<i class="fa fa-eye"></i>
        	热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
@@ -350,7 +338,7 @@
 
 
 	
-    <span class="leancloud_likes" id="/2019/09/17/第一篇博客/_likes" data-url="/2019/09/17/第一篇博客/" data-title="给亲爱的你" rel="unlike">
+    <span class="leancloud_likes" id="/2019/09/20/Linux下Java-Tomcat配置/_likes" data-url="/2019/09/20/Linux下Java-Tomcat配置/" data-title="Linux下Java+Tomcat配置" rel="unlike">
         <i class="fa fa-heart"></i>
         喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -359,7 +347,10 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1 id="Welcome-to-BackOurTomorrow"><a href="#Welcome-to-BackOurTomorrow" class="headerlink" title="Welcome to BackOurTomorrow!"></a>Welcome to <a href="http://49.235.253.163/2017.html" target="_blank" rel="noopener">BackOurTomorrow</a>!</h1><p>Welcome to <a href="http://49.235.253.163/2017.html" target="_blank" rel="noopener">BackOurTomorrow</a>!<br><a href="http://49.235.253.163/2017.html" target="_blank" rel="noopener">我们的未来</a></p>
+		<p>#1.jdk1.8<br>首先下载官网的jdk，这里要注意下载的版本。<br>然后传到linux系统下，然后tar -zxvf解压。<br>然后配置环境变量1. 修改/etc/profile文件<br>如果你的计算机仅仅作为开发使用时推荐使用这种方法，因为所有用户的shell都有权使用这些环境变量，可能会给系统带来安全性问题。<br>·用文本编辑器打开/etc/profile<br>·在profile文件末尾加入：<br>export JAVA_HOME=/usr/share/jdk1.6.0_14<br>export PATH=$JAVA_HOME/bin:$PATH<br>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar </p>
+<p>·重新登录<br>·注解<br>a. 你要将 /usr/share/jdk1.6.0_14改为你的jdk安装目录<br>b. linux下用冒号“:”来分隔路径<br>c. $PATH / $CLASSPATH / $JAVA_HOME 是用来引用原来的环境变量的值<br>在设置环境变量时特别要注意不能把原来的值给覆盖掉了，这是一种<br>常见的错误。<br>d. CLASSPATH中当前目录“.”不能丢,把当前目录丢掉也是常见的错误。<br>e. export是把这三个变量导出为全局变量。<br>f. 大小写必须严格区分。<br>然后source /etc/profile生效。<br>这时候输入java -version应该就可以看到了。</p>
+<p>#2.tomcat8<br>1.下载<br>这里尤其注意，我大概在官网下载的包里来来回回调试了6遍，都是错误的，有的是缺少bootstarp.jar包，有的是缺其他的，感觉官网都有点问题。后来我用了阿里云的镜像，就可以了。但是还是缺少日志文件，需要在logs下自己创建catalina.out文件。这个很关键！<br>Linux下报错，不在catalina.out下根本不知道他有错。<br>2.安装<br>同上解压。</p>
+<p>#3.Nginx配置代理</p>
 	
 	</div>
 	
@@ -378,10 +369,10 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/09/20/SpringBoot配置Mytais！/" title="SpringBoot配置Mytais！" rel="prev">
-				&laquo;上一篇
-			</a>
 		
+			<a href="/2019/09/20/SpringBoot配置Mytais！/" title="SpringBoot配置Mytais！" rel="next">
+				下一篇&raquo;
+			</a>
 			
 	</span>
 
@@ -397,29 +388,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/09/20/Linux下Java-Tomcat配置/" title="Linux下Java+Tomcat配置">
-								Linux下Java+Tomcat配置			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								九月 20日, 2019				
-							</p>
-							<p class="relate-post-content">
-								#1.jdk1.8首先下载官网的jdk，这里要注意下载的版本。然后传到linux系统下，然后tar -zxvf解压。然后配置环境变量1. 修改/etc/profile文件如果你的计算机仅仅作为开发使用时推荐使用这种方法，因为所有用户的...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/09/20/Linux下Java-Tomcat配置/" title="Linux下Java+Tomcat配置">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="Linux下Java+Tomcat配置"/>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -439,6 +407,30 @@
 							<a href="/2019/09/20/SpringBoot配置Mytais！/" title="SpringBoot配置Mytais！">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="SpringBoot配置Mytais！"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/09/17/第一篇博客/" title="给亲爱的你">
+								给亲爱的你			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								九月 17日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Welcome to BackOurTomorrow!Welcome to BackOurTomorrow!我们的未来
+
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/09/17/第一篇博客/" title="给亲爱的你">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="给亲爱的你"/>
 							</a>
 						</div>
 					</li>											
